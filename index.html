@@ -65,13 +65,15 @@
     var contraseñasValidas = ["c", "contraseña456", "contraseña789"];
 
     if (contraseñasValidas.includes(contraseña)) {
+        // Guardar el estado de autenticación
+        localStorage.setItem('authenticated', 'true');
         // Redirigir a la URL si la contraseña es correcta
         window.location.replace("principal.html");
-
     } else {
         alert("Contraseña incorrecta.");
     }
 }
+
 </script>
 
 </body>
