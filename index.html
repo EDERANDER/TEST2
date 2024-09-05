@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styleLogin.css">
+    <title>Ludiflex | Iniciar Sesión & Registro</title>
+</head>
+<body>
+ <div class="wrapper">
+    <nav class="nav">
+        <div class="nav-logo">
+            <p>Aplicación Cuestionario</p>
+        </div>
+        <div class="nav-menu" id="menuNavegacion">
+            <ul>
+                <li><a href="#" class="link active">Inicio</a></li>
+                <li><a href="#" class="link">Acerca de</a></li>
+            </ul>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="miFuncionMenu()"></i>
+        </div>
+    </nav>
+
+    <!----------------------------- Formulario ----------------------------------->    
+    <div class="form-box">
+        
+        <!------------------- formulario de inicio de sesión -------------------------->
+
+        <div class="login-container" id="iniciarSesion">
+            <div class="input-box">
+                <input type="password" id="contraseña" class="input-field" placeholder="Contraseña">
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+                <input type="button" class="submit" value="Iniciar Sesión" onclick="verificarContraseña()">
+            </div>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="iniciarSesion-check">
+                    <label for="iniciarSesion-check"> Recuérdame</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+   function miFuncionMenu() {
+    var i = document.getElementById("menuNavegacion");
+
+    if(i.className === "nav-menu") {
+        i.className += " responsive";
+    } else {
+        i.className = "nav-menu";
+    }
+   }
+
+   function verificarContraseña() {
+    var contraseña = document.getElementById("contraseña").value;
+
+    // Aquí defines las contraseñas válidas
+    var contraseñasValidas = ["c", "contraseña456", "contraseña789"];
+
+    if (contraseñasValidas.includes(contraseña)) {
+        // Redirigir a la URL si la contraseña es correcta
+        window.location.replace("principal.html");
+
+    } else {
+        alert("Contraseña incorrecta.");
+    }
+}
+</script>
+
+</body>
+</html>
