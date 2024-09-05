@@ -247,6 +247,18 @@
 
 
     <!-- JavaScript Libraries -->
+    <script>
+        // Verificar si el usuario está autenticado
+        if (localStorage.getItem('authenticated') !== 'true') {
+            window.location.replace("login.html");
+        }
+
+        // Manejo de cierre de sesión
+        document.getElementById('logout').addEventListener('click', function() {
+            localStorage.removeItem('authenticated');
+            window.location.replace("login.html");
+        });
+    </script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
